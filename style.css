@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#grid {
+    width: 960px;
+    height: 960px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.square {
+    box-sizing: border-box;
+    border: 1px solid red;
+    height: auto;
+    background-color: black;
+}
