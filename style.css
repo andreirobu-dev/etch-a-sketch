@@ -13,9 +13,14 @@ body {
     flex-wrap: wrap;
 }
 
-.square {
+.cell {
     box-sizing: border-box;
-    border: 1px solid red;
     height: auto;
     background-color: black;
+}
+
+.cell-hover {
+    box-sizing: border-box;
+    height: auto;
+    background-color: grey;
 }
