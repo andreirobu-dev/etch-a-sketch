@@ -1,26 +1,38 @@
 body {
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #grid {
-    width: 960px;
-    height: 960px;
+    width: 900px;
+    height: 900px;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    border: 5px solid blue;
 }
 
 .cell {
     box-sizing: border-box;
     height: auto;
-    background-color: black;
+    background-color: grey;
 }
 
 .cell-hover {
     box-sizing: border-box;
     height: auto;
-    background-color: grey;
+    background-color: black;
+}
+
+#ask {
+    padding: 10px;
+    border: 2px solid black;
+    margin: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
 }

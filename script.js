@@ -2,12 +2,18 @@ let cellsPerRow = 16;
 
 const body = document.querySelector("body");
 const grid = document.querySelector("#grid");
+const btn = document.querySelector("#ask");
+
+fillGrid(cellsPerRow);
+btn.addEventListener("click", changeGridSize);
+let cells = document.querySelectorAll(".cell");
+changeColorOnHover(cells);
 
 function fillGrid (cellsPerRow) {
-    const cells = cellsPerRow ** 2;
-    const cellSize = 100 / cellsPerRow;
+    let cellsNumber = cellsPerRow ** 2;
+    let cellSize = 100 / cellsPerRow;
 
-    for (let i=0; i<cells; i++) {
+    for (let i=0; i<cellsNumber; i++) {
         const cell = document.createElement("div");
         cell.classList.toggle("cell");
         cell.style.width = `${cellSize}%`;
@@ -26,8 +32,23 @@ function changeColorOnHover (cells) {
     })
 }
 
-fillGrid(cellsPerRow);
-body.appendChild(grid);
-const cells = document.querySelectorAll(".cell");
-console.log(cells.length);
-changeColorOnHover(cells);
+function clearGrid () {
+    const numberOfCells = cells.length;
+    for (i=0; i<numberOfCells; i++) {
+        grid.removeChild(grid.firstChild)
+    }
+}
+
+function changeGridSize () {
+    clearGrid(grid, cells);
+    while (true) {
+        cellsPerRow = parseInt(prompt("Cells per row: "));
+        if (cellsPerRow <= 100) {
+            break
+        }
+    }
+    fillGrid(cellsPerRow);
+    cells = document.querySelectorAll(".cell");
+    changeColorOnHover(cells);
+}
+
